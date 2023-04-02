@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class DequeueImpl<E> implements Dequeue<E> {
 
-    protected final E[] data;
+    protected E[] data = null;
     protected int size;
     protected final int DEFAULT_HEAD = 0;
-    protected final int DEFAULT_TAIL = -1;
+    protected final int DEFAULT_TAIL = size-1;
     protected int tail;
     protected int head;
 
@@ -24,13 +24,14 @@ public class DequeueImpl<E> implements Dequeue<E> {
             return false;
         }
 
-        if (tail == data.length - 1) {
-            tail = DEFAULT_TAIL;
+        if (head == data.length - 1) {
+            head = DEFAULT_HEAD;
         }
         data[++tail] = value;
         size++;
 
-        return false;
+
+        return true;
     }
 
     @Override
@@ -39,8 +40,8 @@ public class DequeueImpl<E> implements Dequeue<E> {
             return false;
         }
 
-        if (head == data.length - 1) {
-            head = DEFAULT_HEAD;
+        if (tail == data.length - 1) {
+            tail = DEFAULT_TAIL;
         }
         data[++head] = value;
         size++;

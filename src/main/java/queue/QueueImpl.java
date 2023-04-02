@@ -2,9 +2,10 @@ package queue;
 
 public class QueueImpl<E> implements Queue<E> {
 
+
+    protected final E[] data;
     protected final int DEFAULT_TAIL = -1;
     protected final int DEFAULT_HEAD = 0;
-    protected final E[] data;
     protected int size;
     protected int tail;
     protected int head;

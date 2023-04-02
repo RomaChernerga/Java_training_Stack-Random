@@ -22,12 +22,12 @@ public class Test {
         Dequeue<Integer> dequeue = new DequeueImpl<>(6);
 
         System.out.println("add element: " + dequeue.insertLeft(1));
+        System.out.println("add element: " + dequeue.insertLeft(3));
         System.out.println("add element: " + dequeue.insertRight(9));
-//        System.out.println("add element: " + dequeue.insertLeft(2));
-//        System.out.println("add element: " + dequeue.insertRight(10));
-//        System.out.println("add element: " + dequeue.insertRight(11));
+//        System.out.println("add element: " + dequeue.insertRight(7));
 //        System.out.println("add element: " + dequeue.insertLeft(3));
-//        System.out.println("add element: " + dequeue.insertLeft(4));
+
+
 
         dequeue.display();
 
